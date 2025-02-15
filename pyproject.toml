@@ -1,7 +1,7 @@
 [project]
 name = "distill-modern-bert"
 version = "0.1.0"
-description = "TODO"
+description = "Distill the embeddings of a base model to a smaller dimension using Model2Vec framework."
 readme = "README.md"
 authors = [
     {name = "Adrien Riaux", email = "adrien.riaux@gmail.com"},
