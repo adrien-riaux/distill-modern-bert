@@ -21,3 +21,13 @@ data/
 
 # Models
 models/
+
+# Logs
+logs/
+
+# Environments
+env/
+.env
+
+# VsCode
+.vscode/

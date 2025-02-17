@@ -1,0 +1,39 @@
+variables:
+  GIT_USER_EMAIL: gitlab-wiki-ci-bot@equancy.com
+  GIT_USER_NAME: Wiki Bot
+  GITLAB_TOKEN: $CICD_TOKEN
+  PYTHON_VERSION: 3.11
+
+image: python:$PYTHON_VERSION
+
+before_script:
+  - apt-get update && apt-get install -y curl git
+  - curl -LsSf https://astral.sh/uv/install.sh | sh
+  - export PATH=$HOME/.local/bin:$PATH
+  - git config --global user.email "$GIT_USER_EMAIL"
+  - git config --global user.name "$GIT_USER_NAME"
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+  -  |
+    # Clone the repository
+    REPO_URL=https://gitlab-ci-token:${GITLAB_TOKEN}@gitlab.com/adrien-riaux/distill-modern-bert.git
+    git clone "$REPO_URL" --depth=1
+
+    # Install the project
+    cd distill-modern-bert
+    uv sync
+
+    # Run the formatting and linting checks
+    uv run ruff check --no-fix --config pyproject.toml
+    uv run ruff format --check --config pyproject.toml
+
+    # Run the docstring coverage check
+    uv run interrogate --config pyproject.toml
+
+  only:
+    - merge_requests

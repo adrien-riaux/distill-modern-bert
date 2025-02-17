@@ -1,12 +1,18 @@
 [project]
 name = "distill-modern-bert"
 version = "0.1.0"
-description = "Add your description here"
+description = "Distill the embeddings of a base model to a smaller dimension using Model2Vec framework."
 readme = "README.md"
+authors = [
+    {name = "Adrien Riaux", email = "adrien.riaux@gmail.com"},
+]
 requires-python = ">=3.11"
 dependencies = [
+    "fire>=0.7.0",
+    "loguru>=0.7.3",
     "model2vec>=0.3.9",
     "numpy==1.26.4",
+    "python-dotenv>=1.0.1",
     "sentence-transformers>=3.4.1",
     "torch==2.2.2",
 ]
@@ -20,6 +26,7 @@ dev = [
     "ruff>=0.9.6",
 ]
 test = [
+    "pytest-mock>=3.14.0",
     "pytest>=8.3.4",
 ]
 
