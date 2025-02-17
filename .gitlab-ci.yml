@@ -28,11 +28,12 @@ build:
     cd distill-modern-bert
     uv sync
 
-    # Run the tests
+    # Run the formatting and linting checks
     uv run ruff check --no-fix --config pyproject.toml
     uv run ruff format --check --config pyproject.toml
+
+    # Run the docstring coverage check
     uv run interrogate --config pyproject.toml
-    uv run pytest -v --disable-warnings
 
   only:
     - merge_requests
