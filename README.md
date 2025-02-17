@@ -34,7 +34,7 @@ make run-main ARGS="--base_model_name MODERNBERT_BASE \
 
 ### CLI Arguments
 
-- `--base_model_name`: The name of the base ModernBERT model to use for distillation. Only `MODERNBERT_BASE` and `MODERNBERT_LARGE` are available for the moment.
+- `--base_model_name`: The name of the base ModernBERT model to use for distillation. Only `MODERNBERT_BASE`, `MODERNBERT_LARGE`, `MULTILINGUAL_MPNET_BASE` and `MULTILINGUAL_MINILM_L12` are available for the moment.
 - `--pca_dims`: The number of dimensions to reduce the embeddings to using PCA.
 - `--model_repository_name`: The name of the Hugging Face repository where the distilled model will be saved.
 - `--commit_msg`: The commit message for saving the new version of the distilled model.

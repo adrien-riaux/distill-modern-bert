@@ -16,7 +16,8 @@ def main(
     locally and push it to the Hugging Face Hub.
 
     Args:
-        base_model_name (str): Name of the base model to distill. Choose from ['MODERNBERT_BASE', 'MODERNBERT_LARGE'].
+        base_model_name (str): Name of the base model to distill. Choose from ['MODERNBERT_BASE', 'MODERNBERT_LARGE',
+            'MULTILINGUAL_MPNET_BASE', 'MULTILINGUAL_MINILM_L12'].
         pca_dims (int): Number of dimensions to reduce the embeddings to.
         model_repository_name (str): Name of the repository to push the distilled model to.
         save_path (str, optional): Path to save the distilled model. Defaults to None.
