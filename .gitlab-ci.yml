@@ -8,9 +8,8 @@ variables:
 image: python:$PYTHON_VERSION
 
 before_script:
-  - apt-get update && apt-get install -y curl
+  - apt-get update && apt-get install -y curl git
   - curl -LsSf https://astral.sh/uv/install.sh | sh
-  - apk add --no-cache git
   - git config --global user.email "$GIT_USER_EMAIL"
   - git config --global user.name "$GIT_USER_NAME"
 
