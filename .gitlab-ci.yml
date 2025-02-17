@@ -26,7 +26,6 @@ build:
 
     # Install the project
     cd distill-modern-bert
-    uv venv .venv
     uv sync
 
     # Run the tests
