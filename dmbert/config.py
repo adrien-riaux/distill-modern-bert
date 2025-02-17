@@ -10,5 +10,5 @@ class BaseModels(StrEnum):
 
     MODERNBERT_BASE = "nomic-ai/modernbert-embed-base"
     MODERNBERT_LARGE = "lightonai/modernbert-embed-large"
-    MULTILINGUAL_MPNET_BASE = "paraphrase-multilingual-mpnet-base-v2"
-    MULTILINGUAL_MINILM_L12 = "paraphrase-multilingual-MiniLM-L12-v2"
+    MULTILINGUAL_MPNET_BASE = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+    MULTILINGUAL_MINILM_L12 = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
