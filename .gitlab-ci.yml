@@ -9,6 +9,7 @@ image: python:$PYTHON_VERSION
 before_script:
   - apt-get update && apt-get install -y curl git
   - curl -LsSf https://astral.sh/uv/install.sh | sh
+  - export PATH=$HOME/.local/bin:$PATH
   - git config --global user.email "$GIT_USER_EMAIL"
   - git config --global user.name "$GIT_USER_NAME"
 
