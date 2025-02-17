@@ -32,6 +32,8 @@ make run-main ARGS="--base_model_name MODERNBERT_BASE \
                     --commit_msg 'feat: add new version of distill-modernbert-embed-base'"
 ```
 
+*Ensure you set up a Hugging Face access token, add it to your .env file as the `HG_TOKEN` variable, and create a new model repository on the Hub. The main script will push the repository to the Hugging Face Hub.*
+
 ### CLI Arguments
 
 - `--base_model_name`: The name of the base ModernBERT model to use for distillation. Only `MODERNBERT_BASE`, `MODERNBERT_LARGE`, `MULTILINGUAL_MPNET_BASE` and `MULTILINGUAL_MINILM_L12` are available for the moment.
