@@ -20,7 +20,7 @@ build:
   script:
   -  |
     # Clone the repository
-    REPO_URL=https://gitlab-ci-token:${GITLAB_TOKEN}@git.equancy.cloud/${CI_PROJECT_PATH}.git
+    REPO_URL=https://gitlab-ci-token:${GITLAB_TOKEN}@gitlab.com/adrien-riaux/distill-modern-bert.git
     git clone "$REPO_URL" --depth=1
 
     # Install the project
