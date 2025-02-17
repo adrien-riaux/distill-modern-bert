@@ -1,0 +1,32 @@
+variables:
+  GIT_USER_EMAIL: gitlab-wiki-ci-bot@equancy.com
+  GIT_USER_NAME: Wiki Bot
+  GITLAB_TOKEN: $CI_WIKI_TOKEN
+  PYTHON_VERSION: 3.11
+  REPO_URL: https://gitlab-ci-token:${GITLAB_TOKEN}@git.equancy.cloud/${CI_PROJECT_PATH}.git
+
+image: python:$PYTHON_VERSION
+
+before_script:
+  - apt-get update && apt-get install -y curl
+  - curl -LsSf https://astral.sh/uv/install.sh | sh
+  - apk add --no-cache git
+  - git config --global user.email "$GIT_USER_EMAIL"
+  - git config --global user.name "$GIT_USER_NAME"
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - git clone "$REPO_URL" --depth=1
+    - cd distill-modern-bert
+    - make setup
+    - uv run ruff check --no-fix --config pyproject.toml
+    - uv run ruff format --check --config pyproject.toml
+    - uv run interrogate --config pyproject.toml
+    - uv run pytest -v --disable-warnings
+
+  only:
+    - merge_requests
