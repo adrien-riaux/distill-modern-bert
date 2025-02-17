@@ -1,7 +1,7 @@
 variables:
   GIT_USER_EMAIL: gitlab-wiki-ci-bot@equancy.com
   GIT_USER_NAME: Wiki Bot
-  GITLAB_TOKEN: $CI_WIKI_TOKEN
+  GITLAB_TOKEN: $CI_TOKEN
   PYTHON_VERSION: 3.11
   REPO_URL: https://gitlab-ci-token:${GITLAB_TOKEN}@git.equancy.cloud/${CI_PROJECT_PATH}.git
 
