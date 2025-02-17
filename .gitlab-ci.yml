@@ -25,7 +25,8 @@ build:
 
     # Install the project
     cd distill-modern-bert
-    make setup
+    uv venv .venv
+    uv sync
 
     # Run the tests
     uv run ruff check --no-fix --config pyproject.toml
