@@ -1,6 +1,6 @@
 variables:
-  GIT_USER_EMAIL: gitlab-wiki-ci-bot@equancy.com
-  GIT_USER_NAME: Wiki Bot
+  GIT_USER_EMAIL: gitlab--ci-bot@gmail.com
+  GIT_USER_NAME: GitLab Bot
   GITLAB_TOKEN: $CICD_TOKEN
   PYTHON_VERSION: 3.11
 
