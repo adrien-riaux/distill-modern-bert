@@ -21,7 +21,7 @@ check_code_quality:
   script:
   -  |
     # Clone the repository
-    REPO_URL=https://gitlab-ci-token:${GITLAB_TOKEN}@gitlab.com/adrien-riaux/${CI_PROJECT_PATH}.git
+    REPO_URL=https://gitlab-ci-token:${GITLAB_TOKEN}@gitlab.com/adrien-riaux/${CI_PROJECT_PATH}
     git clone "$REPO_URL" --branch $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME --depth=1 repo
 
     # Install the project
