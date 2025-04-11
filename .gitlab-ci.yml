@@ -16,7 +16,7 @@ before_script:
 stages:
   - check
 
-check _code_quality:
+check_code_quality:
   stage: check
   script:
   -  |
