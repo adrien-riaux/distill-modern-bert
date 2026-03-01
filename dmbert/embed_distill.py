@@ -20,7 +20,7 @@ class EmbedDistill:
         save_path (str, optional): Path to save the distilled model. Defaults to None.
     """
 
-    def __init__(self, base_model_name: str, pca_dims: int, save_path: str = None) -> None:
+    def __init__(self, base_model_name: str, pca_dims: int, save_path: str | None = None) -> None:
         self.base_model_name = base_model_name
         self.pca_dims = pca_dims
 
@@ -67,7 +67,7 @@ class EmbedDistill:
         self,
         distilled_model: SentenceTransformer,
         model_repository_name: str,
-        commit_msg: str = None,
+        commit_msg: str | None = None,
     ) -> None:
         """
         Push the distilled model to Hugging Face Hub. The Hub token is read from .env file, and should
