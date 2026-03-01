@@ -8,8 +8,8 @@ def main(
     base_model_name: str,
     pca_dims: int,
     model_repository_name: str,
-    save_path: str = None,
-    commit_msg: str = None,
+    save_path: str | None = None,
+    commit_msg: str | None = None,
 ) -> None:
     """
     Distill the embeddings of a base model to a smaller dimension using Model2Vec framework save the distilled model
